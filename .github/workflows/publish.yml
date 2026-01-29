@@ -16,8 +16,8 @@ jobs:
         with:
           node-version: "20.x"
           registry-url: "https://npm.pkg.github.com"
-          scope: "@uzochukwueddie"
-      - run: npm install
+          scope: "@pritamgupta9"
+      - run: npm install -f
       - run: npm run build
       # - run: |
       #     echo @uzochukwueddie:https://npm.pkg.github.com/ > build/.npmrc

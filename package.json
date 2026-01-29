@@ -15,11 +15,11 @@
     "trailingComma": "es5"
   },
   "keywords": [],
-  "name": "@uzochukwueddie/jobber-shared",
-  "author": "Uzochukwu Eddie Odozi",
+  "name": "@pritamgupta9/shopper-shared",
+  "author": "pritamgupta9",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/uzochukwueddie/jobber-shared.git"
+    "url": "git+https://github.com/pritamgupta9/9-shopper-shared.git"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
@@ -50,6 +50,7 @@
     "@babel/preset-env": "^7.24.3",
     "@babel/preset-typescript": "^7.24.1",
     "@types/express": "^5.0.3",
-    "@types/jsonwebtoken": "^9.0.6"
+    "@types/jsonwebtoken": "^9.0.6",
+    "cross-env": "^10.1.0"
   }
 }
