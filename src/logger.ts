@@ -1,8 +1,15 @@
 import winston, { Logger } from 'winston';
-import { ElasticsearchTransformer, ElasticsearchTransport, LogData, TransformedData } from 'winston-elasticsearch';
+import { ElasticsearchTransport, Transformer } from 'winston-elasticsearch';
+import apm from 'elastic-apm-node';
 
-const esTransformer = (logData: LogData): TransformedData => {
-  return ElasticsearchTransformer(logData);
+const esTransformer: Transformer = (logData) => {
+  const { level, message, meta, timestamp } = logData;
+  return {
+    '@timestamp': timestamp,
+    level,
+    message,
+    meta
+  };
 }
 
 export const winstonLogger = (elasticsearchNode: string, name: string, level: string): Logger => {
@@ -16,6 +23,7 @@ export const winstonLogger = (elasticsearchNode: string, name: string, level: st
     elasticsearch: {
       level,
       transformer: esTransformer,
+      apm,
       clientOpts: {
         node: elasticsearchNode,
         log: level,
